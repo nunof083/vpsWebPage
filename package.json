@@ -1,0 +1,19 @@
+{
+  "name": "vpswebpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nunof083/vpsWebPage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nunof083/vpsWebPage/issues"
+  },
+  "homepage": "https://github.com/nunof083/vpsWebPage#readme",
+  "description": ""
+}
