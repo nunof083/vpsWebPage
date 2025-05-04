@@ -40,7 +40,12 @@ app.post('/upload', upload.single('rom'), async (req, res) => {
     res.send(`<h2>✅ ROM ${fileName} successfuly sent to ${username}@${ip}:${destinationPath}</h2><a href="/">Back</a>`);
   } catch (err) {
     console.error('Erreur SFTP : ' + err);
-    res.status(500).send(`<h2>❌ Error sending ROM : ${err.message}</h2><a href="/">Back</a>`);
+    res.status(500).send(`
+      <h2>❌ Error sending ROM</h2>
+      <pre>${err.stack}</pre>
+      <a href="/">Back</a>
+    `);
+    
   } finally {
     await sftp.end();
     fs.unlinkSync(filePath); // delets the local file after upload
