@@ -24,8 +24,11 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('rom'), async (req, res) => {
   const filePath = req.file.path;
   const fileName = req.file.originalname;
-
   const { ip, username, password, path: destinationPath } = req.body;
+
+  console.log(`📤 Upload requested to ${ip} as ${username}`);
+  console.log(`📄 File: ${fileName} (saved as ${filePath})`);
+  console.log(`📁 Destination path: ${destinationPath}`);
 
   const sftp = new SftpClient();
   try {
@@ -35,22 +38,24 @@ app.post('/upload', upload.single('rom'), async (req, res) => {
       password,
     });
 
+    console.log("🔐 SFTP connected.");
+
     const fullRemotePath = path.posix.join(destinationPath, fileName);
+    console.log(`➡️ Uploading to: ${fullRemotePath}`);
+
     await sftp.fastPut(filePath, fullRemotePath);
-    res.send(`<h2>✅ ROM ${fileName} successfuly sent to ${username}@${ip}:${destinationPath}</h2><a href="/">Back</a>`);
+
+    console.log("✅ Upload complete.");
+    res.send(`<div style="color:green"><h2>✅ ROM ${fileName} sent to ${username}@${ip}:${destinationPath}</h2></div><a href="/">Back</a>`);
   } catch (err) {
-    console.error('Erreur SFTP : ' + err);
-    res.status(500).send(`
-      <h2>❌ Error sending ROM</h2>
-      <pre>${err.stack}</pre>
-      <a href="/">Back</a>
-    `);
-    
+    console.error('❌ SFTP upload failed:', err);
+    res.status(500).send(`<div style="color:red"><h2>❌ Upload failed: ${err.message}</h2><pre>${err.stack}</pre></div><a href="/">Back</a>`);
   } finally {
     await sftp.end();
-    fs.unlinkSync(filePath); // delets the local file after upload
+    fs.unlinkSync(filePath); // clean up
   }
 });
+
 
 app.listen(3001, () => {
   console.log('Upload Server on: http://localhost:3000');
