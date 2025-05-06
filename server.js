@@ -3,17 +3,17 @@ const multer = require('multer');
 const SftpClient = require('ssh2-sftp-client');
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors');
+// const cors = require('cors');
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true })); // this parses the URL-encoded data
-app.use(cors({
-  origin: 'https://www.dizzyy.tech',
-  methods: ['POST'],
-}));
+// app.use(cors({
+//   origin: 'https://www.dizzyy.tech',
+//   methods: ['POST'],
+// }));
 
 
 app.get('/', (req, res) => {
@@ -52,6 +52,6 @@ app.post('/upload', upload.single('rom'), async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log('Upload Server on: http://localhost:3000');
 });
