@@ -184,9 +184,9 @@ footer {
   z-index: 1000; /* ensure it's above everything */
 }
 
-#progressContainer.hidden {
+/* #progressContainer.hidden {
   display: none;
-}
+} */
 
 #progressBar {
   height: 20px;
