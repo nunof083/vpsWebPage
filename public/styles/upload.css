@@ -180,6 +180,18 @@ footer {
   color: #e74c3c;
 }
 
+#loadingOverlay {
+  z-index: 1000; /* ensure it's above everything */
+}
+
+#progressBar {
+  height: 20px;
+  background: #9a42ff;
+  width: 0%;
+  transition: width 0.2s;
+}
+
+
 /* Keyframes */
 @keyframes spin {
   to { transform: rotate(360deg); }

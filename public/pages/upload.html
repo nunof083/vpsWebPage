@@ -9,6 +9,7 @@
     <link rel="icon" href="/img/logo.png" type="image/png">
     <link rel="stylesheet" href="/styles/upload.css">
     <script src="/scripts/upload.js" defer></script>
+    <script src="/scripts/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,6 +31,15 @@
         <div class="spinner"></div>
         <p>Uploading…</p>
       </div>
+
+      <!-- Progress Bar -->
+      <div style="width:100%; max-width:480px; margin: 0 auto; padding: 0 1rem;">
+        <div style="background:#333; border-radius:8px; overflow:hidden;">
+          <div id="progressBar" style="height:20px; background:#9a42ff; width:0%; transition: width 0.2s;"></div>
+        </div>
+        <p style="text-align:center; margin-top:0.5rem;" id="progressPercent">0%</p>
+      </div>
+
 
       <!-- Notification -->
       <div id="notification" class="hidden"></div>
