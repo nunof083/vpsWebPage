@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ROM Uploader - Dizzyy.tech</title>
+    <link rel="icon" href="/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="/styles/upload.css">
+    <script src="/scripts/upload.js" defer></script>
+    <script src="/scripts/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Upload ROM to your BatoceraOS</h1>
+      <p>Hosted on Hostinger | Debian 12</p>
+    </header>
+    <main>
+      <form id="uploadForm">
+        <input type="text" name="ip" placeholder="IP address" required />
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="text" name="path" placeholder="/userdata/roms/psp/" required />
+        <input type="file" name="rom" required />
+        <button type="submit">Send</button>
+      </form>
+
+      <!-- Overlay de chargement avec Progress Bar -->
+      <div id="loadingOverlay" class="hidden">
+        <div class="spinner"></div>
+        <p id="loadingText">Uploading…</p>
+        <!-- Progress Bar goes first so it stays at the top -->
+        <div style="width:100%; max-width:480px; padding: 0 1rem;" id="progressContainer" class="hidden">
+          <div style="background:#333; border-radius:8px; overflow:hidden;">
+            <div id="progressBar" style="height:20px; background:#9a42ff; width:0%; transition: width 0.2s;"></div>
+          </div>
+          <p style="text-align:center; margin-top:0.5rem;" id="progressPercent">0%</p>
+        </div>
+      </div>
+
+
+
+      <!-- Notification -->
+      <div id="notification" class="hidden"></div>
+    </main>
+    <footer>
+      <p>© 2025 dizzyy.tech | <a href="https://github.com/nunof083" target="_blank">GitHub</a></p>
+    </footer>
+  </body>
+</html>
