@@ -27,62 +27,100 @@
             <li><strong>Location:</strong> Paris, FR</li>
           </ul>
         </section>
-      
+
         <section class="services">
           <h2>🔧 Running Services</h2>
-          <div class="cards">
-            <div class="card">
-              <h3>🌐 Nginx</h3>
-              <p>Web Server.</p>
-            </div>
-            <div class="card">
-              <h3>📁 Gitlab</h3>
-              <p>Git Server and Project Manager.</p>
-            </div>
-            <div class="card">
-              <h3>📊 Prometheus + Grafana</h3>
-              <p>Monitoring system metrics.</p>
-            </div>
-            <div class="card">
-                <h3>📧 Postfix</h3>
-                <p>Mail server.</p>
-            </div>
-            <div class="card">
-                <h3>📑 Postfixadmin</h3>
-                <p>Web page for creating and managing emails with MariaDB.</p>
-            </div>
-            <div class="card">
-              <h3>📤 Roundcube</h3>
-              <p>Web page for mail client.</p>
-            </div>
-            <div class="card">
-              <h3>🔒Fail2ban</h3>
-              <p>Service that controls authentication.</p>
-            </div>
-            <div class="card">
-              <h3>👮Portsentry</h3>
-              <p>Service that controls scan on ports.</p>
-            </div>
-            <div class="card">
-              <h3>🔥UFW Firewall</h3>
-              <p>Firewall to allow/deny IPs.</p>
-            </div>
-            <div class="card">
-              <h3>🚪Knockd</h3>
-              <p>Knocking service to open SSH port.</p>
+          <div class="cards-wrapper">
+            <div class="cards">
+              <div class="card">
+                <h3>🌐 Nginx</h3>
+                <p>Web Server.</p>
+              </div>
+              <div class="card">
+                <a href="https://grafana.dizzyy.tech/">
+                  <h3>📊 Prometheus + Grafana</h3>
+                  <p>Monitoring system metrics.</p>
+                </a>
+              </div>
+              <div class="card">
+                  <h3>📧 Postfix</h3>
+                  <p>Mail server.</p>
+              </div>
+              <div class="card">
+                <a href="https://postfixadmin.dizzyy.tech/login.php">
+                  <h3>📑 Postfixadmin</h3>
+                  <p>Web page for creating and managing emails with MariaDB.</p>
+                </a>
+              </div>
+                <div class="card">
+                <h3>📁 Dovecot</h3>
+                <p>IMAP to synchronize mails.</p>
+              </div>
+              <div class="card">
+                <a href="https://webmail.dizzyy.tech/">
+                  <h3>📧 Roundcube</h3>
+                  <p>Webmail client for accessing emails.</p>
+                </a>
+              </div>
+              <div class="card">
+                <a href="https://cloud.dizzyy.tech/">
+                  <h3>☁️ Nextcloud</h3>
+                  <p>File sharing and collaboration platform.</p>
+                </a>
+              </div>
+              <div class="card">
+                <h3>🔒Fail2ban</h3>
+                <p>Service that controls authentication.</p>
+              </div>
+              <div class="card">
+                <h3>👮Portsentry</h3>
+                <p>Service that controls scan on ports.</p>
+              </div>
+              <div class="card">
+                <h3>🔥UFW Firewall</h3>
+                <p>Interface to iptables (Uncomplicated Firewall)</p>
+              </div>
+              <div class="card">
+                <h3>🚪Knockd</h3>
+                <p>Knocking service to open SSH port.</p>
+              </div>
+              <div class="card">
+                <a href="https://redmine.dizzyy.tech/">
+                  <h3>🗂️ Redmine</h3>
+                  <p>Project management and issue tracking tool.</p>
+                </a>
+              </div>
+              <div class="card">
+                <h3>📜 Logwatch</h3>
+                <p>Daily system log analyzer and reporter.</p>
+              </div>
+              <div class="card">
+                <h3>🕵️ RKHunter</h3>
+                <p>Scans for rootkits and suspicious files.</p>
+              </div>
+              <div class="card">
+                <h3>🧪 Tripwire</h3>
+                <p>Monitors file integrity to detect unauthorized changes.</p>
+              </div>
+              <div class="card">
+                <h3>📦 Tailscale</h3>
+                <p>VPN for secure access.</p>
             </div>
           </div>
         </section>
       
         <section class="monitoring">
           <h2>📈 Monitoring Dashboard</h2>
-          <p>View a snapshot of the metrics <a href="https://grafana.dizzyy.tech/dashboard/snapshot/gzumIiVZYrg0ite3ZaX07RhRGzKmZSid" target="_blank">here</a>.</p>
+          <p>View a snapshot of the metrics <a href="https://grafana.dizzyy.tech/dashboard/snapshot/gzumIiVZYrg0ite3ZaX07RhRGzKmZSid" target="_blank" style="color: #9a42ff;">here</a>.</p>
           <img src="../img/grafana_dashboard.png" alt="Grafana Dashboard Screenshot" />
         </section>
       
         <section class="security">
           <h2>🔐 Security Measures</h2>
           <ul>
+            <li>📜 Logwatch</li>
+            <li>🕵️ RKHunter</li>
+            <li>🧪 Tripwire</li>
             <li>🔥 UFW Firewall</li>
             <li>🔒 Fail2ban</li>
             <li>🧷 SSH Key Authentication</li>
@@ -91,12 +129,6 @@
             <li>👮 Portsentry</li>
             <li>🚪 Knockd</li>
           </ul>
-        </section>
-
-        <section class="upload-rom">
-          <h2>📤 Upload ROM</h2>
-          <p>Upload your ROMs to a BatoceraOS using this uploader:</p>
-          <a href="./pages/upload.html" target="_blank">Upload ROM</a>
         </section>
         <footer>
           <p>© 2025 dizzyy.tech | <a href="https://github.com/nunof083" target="_blank">GitHub</a></p>

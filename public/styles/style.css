@@ -55,45 +55,21 @@ body {
     flex: 1 1 250px;
     /* border: 1px solid #333; */
     transition: transform 0.2s;
-    box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+    box-shadow: 0px 2px 4px hsla(0, 0%, 0%, 0.25);
     animation: border-angle-rotate 2s infinite linear;
-    border: 0.3rem solid transparent;
+    border: 0.3rem solid #383838;
     position: relative;
     background: linear-gradient(#1e1e1e, #302d2d) padding-box,
-      conic-gradient(
-          from var(--border-angle),
-          var(--bg) 50%,
-          #9a42ff
-        )
         border-box;
-
-    /* background: linear-gradient(white, white) padding-box,
-      conic-gradient(
-          from var(--border-angle),
-          oklch(100% 100% 0deg),
-          oklch(100% 100% 45deg),
-          oklch(100% 100% 90deg),
-          oklch(100% 100% 135deg),
-          oklch(100% 100% 180deg),
-          oklch(100% 100% 225deg),
-          oklch(100% 100% 270deg),
-          oklch(100% 100% 315deg),
-          oklch(100% 100% 360deg)
-        )
-        border-box; */
   }
-  
+
   .card:hover {
     transform: scale(1.02);
   }
   
   a {
-    color: #9a42ff;
+    color: #e0e0e0;
     text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
   }
   
   img {
@@ -128,4 +104,20 @@ body {
 }
   
   /*# sourceMappingURL=style.css.map */
-  
+
+.cards-wrapper {
+--border-angle: 0deg;
+--bg: #1e1e1e;
+padding: 1rem;
+border-radius: 15px;
+margin-top: 1rem;
+animation: border-angle-rotate 6s linear infinite;
+border: 0.3rem solid transparent;
+background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
+            conic-gradient(
+              from var(--border-angle),
+              #1e1e1e,
+              #FFFFFF,
+              #1e1e1e
+            ) border-box;
+}
